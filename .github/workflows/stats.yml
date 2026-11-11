@@ -1,15 +1,13 @@
-name: Generate stats card
+name: GitHub Readme Stats
 
 on:
-  schedule: # execute every 12 hours
-    - cron: "* */12 * * *"
+  schedule:
+    - cron: '0 0 * * *' # roda todo dia
+  workflow_dispatch: # permite rodar manualmente
 
-  workflow_dispatch:
-
-  push:
-    branches:
-    - main
-
+permissions:
+  contents: write
+  statuses: write
 jobs:
   generate:
     permissions:
